@@ -1,7 +1,7 @@
 EvernotePDFClipper
 ==================
 
-This Mac OS X program creates a new note in Evernote containing a **single-page** PDF rendering of the page currently in Safari's front window.  It does this by using the application [Paparazzi!](https://derailer.org/paparazzi/).
+This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the page currently in Safari's front window.  It does this by calling on the third-party application [Paparazzi!](https://derailer.org/paparazzi/).
 
 ----
 *Author*:      [Michael Hucka](http://www.cds.caltech.edu/~mhucka).
@@ -13,9 +13,9 @@ This Mac OS X program creates a new note in Evernote containing a **single-page*
 Requirements and strong recommendations
 ---------------------------------------
 
-EvernotePDFClipper requires [Paparazzi!](https://derailer.org/paparazzi/) to run.  Please visit the [Paparazzi!](https://derailer.org/paparazzi/) to install it.
+EvernotePDFClipper requires [Paparazzi!](https://derailer.org/paparazzi/) to run.  Please visit the [Paparazzi!](https://derailer.org/paparazzi/) to download it and install it on your computer.
 
-To make its use convenient, I recommend creating a keyboard shortcut for EvernotePDFClipper.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
+To make EvernotePDFClipper's use convenient, I recommend creating a keyboard shortcut to invoke it.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
 
 Usage
 -----
@@ -30,17 +30,19 @@ Invoke `EvernotePDFClipper` in some way (e.g., using a keyboard shortcut).  `Eve
 6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
 7. Send a notification (via OS X's notification center) to let you know it's finished.
 
+Beware that the whole process takes time.  The duration depends on the complexity and content of the page (e.g., whether it loads a lot of JavaScript), the speed of Evernote on your computer, the speed of your network connection, and the speed of your computer.  *EvernotePDFClipper does not queue operations, so make sure to let it finish clipping one web page before invoking it to clip another.*
+
 
 Background and more information
 -------------------------------
 
-EvernotePDFClipper was born out of frustrations with Evernote's Web Clipper for Safari.  I neither like the default Evernote clipper's behavior nor how it stores information.  I realize I may be in the minority, and other people may be perfectly happy with it.  If you're in the latter category, great! Then you don't need this program.  But if you share my frustrations, this small program may help you.
+EvernotePDFClipper was born out of frustrations with Evernote's Web Clipper for Safari.  I like neither the default Evernote clipper's behavior nor how it stores information.  I realize I may be in the minority, and other people may be perfectly happy with it.  If you're in the latter category, great! Then you don't need this program.  But if you share my frustrations, this small program may help you.
 
-I find the versions after version 5.9.15 of the Evernote web clipper to be *incredibly* frustrating for a keyboard-intensive user like me: keyboard focus doesn't move to the clipper interface when the clipper is invoked, pressing the tab key does not move focus between fields, the clipper presents a completely useless "OK" confirmation dialog after you click, etc.  Quickly after upgrading from 5.9.15, I downgraded back to 5.9.15 just to keep my sanity.  It solved my user interface complaints, but not my problem with information storage.
+I find the versions of the Evernote Web Clipper after version 5.9.15 to be *incredibly* frustrating for a keyboard-intensive user like me: keyboard focus doesn't move to the clipper interface when the clipper is invoked, pressing the tab key does not move focus between fields, the clipper presents a completely useless "OK" confirmation dialog after you click, etc.  It seems to be designed for people who only use the mouse.   After initially upgrading my copy of the Clipper after a new version came out, I quickly downgraded back to 5.9.15 just to keep my sanity.  At least 5.9.15 solved my user interface complaints, but not my problems with how it stored information.
 
-At some point even before 5.9.15, I lost the ability to save web pages as faithful renditions in PDF form.  The Evernote Web Clipper *used to* provide to this capability: years ago, I could use it to clip a whole-page PDF of a web page, and this was perfect for me.  But at some point it stopped working.  I don't know whether it was due to an update to Mac OS X, or Safari, or Evernote, or a combination.  The best I could do was either print-to-PDF, or use the non-PDF default storage mechanism used by Evernote's Web Clipper.  Neither are ideal: printing to PDF often does not render a page exactly as I see it in my browser, and in addition, it inserts page breaks at arbitrary locations in the output.  Conversely, the default web page storage in Evernote seems to be HTML source, which seems fine &ndash; until you try to view it when you don't have a network connection, whereupon you discover that clipped web pages are often unreadable because the page source uses external images, or external fonts, or uses JavaScript that doesn't behave the same when clipped in an Evernote note, or something else happens.  And even when you *do* have a network connection, what you see when you view a clipped page later may not be the same as what you saw at first, because the page may reference external content and Evernote will show you the *current version* of that content rather than what it was when you clipped the page in the first place.  In summary, more than half the time, the result is useless to me after the fact.
+With the Evernote Web Clipper, I *used to* to be able to save a web page in PDF form.  Years ago, I could use it to clip and store a single-page PDF of a web page, and this was perfect for me.  But at some point this stopped working.  I don't know whether it was due to an update to Mac OS X, or Safari, or Evernote, or a combination.  After it happened, the best I could do was either print to PDF, or use the non-PDF default storage mechanism used by Evernote's Web Clipper.  Neither are ideal: printing to PDF often does not render a page exactly as I see it in my browser, and in addition, it inserts page breaks at arbitrary locations in the output.  Conversely, the default web page storage in Evernote seems to be HTML source, which seems fine &ndash; *until* you try to view it when you don't have a network connection, whereupon you discover that clipped web pages are often unreadable because the page source uses external images, or external fonts, or uses JavaScript that doesn't behave the same when clipped in an Evernote note, or something else happens.  And even when you *do* have a network connection, what you see when you view a clipped page later may not be the same as what you saw at first, because the page may reference external content and Evernote will show you the *current version* of that content when you look at it, rather than what the content was when you clipped the page originally.  In summary, more than half the time, the result is useless to me.
 
-Both the print-to-PDF and the source clipping approaches simply don't work for the purpose of archival storage of a web page: what is stored is not what you see in your browser.  As a researcher, I want to save as faithful of a representation of what I originally saw as I can have.
+Both the print-to-PDF and the source clipping approaches simply don't work for the purpose of archival storage of a web page: what is stored is not what you see in your browser.  As a researcher, I want to save the most faithful representation of materials that I read and use.
 
 Thus, this program was born.
 
@@ -57,7 +59,7 @@ Contributing
 I welcome improvements of all kinds, to the code and to the documentation.
 Please feel free to contact me or do the following:
 
-1. Fork this repo.  See the links at the top of the github page.
+1. Fork this repo.  See the links at the top of this GitHub page.
 2. Create your feature branch (`git checkout -b my-new-feature`) and write
 your changes to the code or documentation.
 3. Commit your changes (`git commit -am 'Describe your changes here'`).
@@ -76,4 +78,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  The software and documentation provided hereunder is on an "as is" basis, and the author has no obligations to provide maintenance, support, updates, enhancements or modifications.  In no event shall the author be liable to any party for direct, indirect, special, incidental or consequential damages, including lost profits, arising out of the use of this software and its documentation, even if the author has been advised of the possibility of such damage.  See the GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License along with this library in the file named "COPYING.txt" included with the software distribution.
+You should have received a copy of the GNU Lesser General Public License along with this library in the file named "LICENSE.txt" included with the software distribution.
