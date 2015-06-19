@@ -22,13 +22,13 @@ Usage
 
 Invoke `EvernotePDFClipper` in some way (e.g., using a keyboard shortcut).  `EvernotePDFClipper` will then do the following:
 
-# Query Safari for the page URL and title
-# Copy any text that is highlighted on the page in Safari
-# Query Evernote to get a list of the user's notebooks
-# Ask the user to select a notebook from a list in a pop-up window
-# Invoke [Paparazzi!](https://derailer.org/paparazzi/) to render the entire page as a single PDF file
-# Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
-# Send a notification (via OS X's notification center) to let you know it's finished.
+1. Query Safari for the page URL and title
+2. Copy any text that is highlighted on the page in Safari
+3. Query Evernote to get a list of the user's notebooks
+4. Ask the user to select a notebook from a list in a pop-up window
+5. Invoke [Paparazzi!](https://derailer.org/paparazzi/) to render the entire page as a single PDF file
+6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
+7. Send a notification (via OS X's notification center) to let you know it's finished.
 
 
 Background and more information
