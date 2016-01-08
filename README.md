@@ -75,6 +75,10 @@ your changes to the code or documentation.
 
 EvernotePDFClipper is currently written in AppleScript.  It uses the AppleScript APIs of Safari, Paparazzi! and Evernote to interact with those programs.
 
+The following improvements would be particularly welcome:
+* Make EvernotePDFClipper queue up requests, so that the user can issue multiple clipping requests in a row without having to wait for Paparazzi! and Evernote to finish their work for each one.
+* Make EvernotePDFClipper ask for tags to add to the note.  This will require querying Evernote for the user's tags, creating a dialog to let the user select one or more tags (or write the tags as text), and attaching the tags to the note in Evernote.
+
 
 Acknowledgments
 ---------------
