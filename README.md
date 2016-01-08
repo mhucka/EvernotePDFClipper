@@ -21,13 +21,13 @@ Installation
 
 Copy `EvernotePDFClipper.scpt` to a location of your choice on your computer (perhaps `/Applications`), and rename it `EvernotePDFClipper`.
 
-To make its use convenient, I recommend creating a keyboard shortcut to invoke `EvernotePDFClipper`.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
+To make its use convenient, I recommend creating a keyboard shortcut to invoke EvernotePDFClipper.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
 
 
 Usage
 -----
 
-Invoke `EvernotePDFClipper` in some way (e.g., using a keyboard shortcut).  `EvernotePDFClipper` will then do the following:
+Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  EvernotePDFClipper will then do the following:
 
 1. Query Safari for the page URL and title
 2. Copy any text that is highlighted on the page in Safari
@@ -57,7 +57,7 @@ Thus, this program was born.
 Reporting problems
 ------------------
 
-Please use the [issue tracker](https://github.com/mhucka/EvernotePDFClipper/issues) to report problems and other issues with `EvernotePDFClipper`.  I regret I do not have time to give this program a proper degree of support, so questions and feedback may go unanswered.  However, I will do what I can.
+Please use the [issue tracker](https://github.com/mhucka/EvernotePDFClipper/issues) to report problems and other issues with EvernotePDFClipper.  I regret I do not have time to give this program a proper degree of support, so questions and feedback may go unanswered.  However, I will do what I can.
 
 
 Contributing
@@ -76,10 +76,16 @@ your changes to the code or documentation.
 EvernotePDFClipper is currently written in AppleScript.  It uses the AppleScript APIs of Safari, Paparazzi! and Evernote to interact with those programs.
 
 
+Acknowledgments
+---------------
+
+A huge round of thanks to Nate Weaver, the developer of [Paparazzi!](https://derailer.org/paparazzi/), without which this tool would not be possible.  (If you find yourself using EvernotePDFClipper and Paparazzi! frequently, please [give a donation to the author of Paparazzi!](https://derailer.org/paparazzi/donate).)
+
+
 Copyright and license
 ---------------------
 
-Copyright (C) 2015 Michael Hucka.
+Copyright (C) 2015-2016 Michael Hucka.
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or any later version.
 
