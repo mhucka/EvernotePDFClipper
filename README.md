@@ -10,12 +10,19 @@ This Mac OS X AppleScript program creates a new note in Evernote containing a **
 
 *Repository*:   [https://github.com/mhucka/EvernotePDFClipper](https://github.com/mhucka/EvernotePDFClipper)
 
-Requirements and strong recommendations
----------------------------------------
+Requirements
+------------
 
 EvernotePDFClipper requires [Paparazzi!](https://derailer.org/paparazzi/) to run.  Please visit the [Paparazzi!](https://derailer.org/paparazzi/) to download it and install it on your computer.
 
-To make EvernotePDFClipper's use convenient, I recommend creating a keyboard shortcut to invoke it.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
+
+Installation
+------------
+
+Copy `EvernotePDFClipper.scpt` to a location of your choice on your computer (perhaps `/Applications`), and rename it `EvernotePDFClipper`.
+
+To make its use convenient, I recommend creating a keyboard shortcut to invoke `EvernotePDFClipper`.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
+
 
 Usage
 -----
@@ -25,7 +32,7 @@ Invoke `EvernotePDFClipper` in some way (e.g., using a keyboard shortcut).  `Eve
 1. Query Safari for the page URL and title
 2. Copy any text that is highlighted on the page in Safari
 3. Query Evernote to get a list of the user's notebooks
-4. Ask the user to select a notebook from a list in a pop-up window
+4. Create a pop-up dialog and ask you to select a notebook from a list
 5. Invoke [Paparazzi!](https://derailer.org/paparazzi/) to render the entire page as a single PDF file
 6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
 7. Send a notification (via OS X's notification center) to let you know it's finished.
