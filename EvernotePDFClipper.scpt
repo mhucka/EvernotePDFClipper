@@ -2,7 +2,7 @@
 -- @file    EvernotePDFClipper
 -- @brief   Create single-page PDF of page currently in Safari's front window.
 -- @author  Michael Hucka <mhucka@caltech.edu>
--- @license Please see the file LICENSE.md in the parent directory
+-- @license Please see the file LICENSE.html in the parent directory
 -- =============================================================================
 
 set _myName to "EvernotePDFClipper"
