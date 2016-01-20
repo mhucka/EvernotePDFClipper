@@ -27,9 +27,9 @@ To make its use convenient, I recommend creating a keyboard shortcut to invoke E
 Usage
 -----
 
-<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
-
 Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  EvernotePDFClipper will then do the following:
+
+<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
 1. Query Safari for the page URL and title
 2. Copy any text that is highlighted on the page in Safari
