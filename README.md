@@ -23,6 +23,7 @@ Copy `EvernotePDFClipper.scpt` to a location of your choice on your computer (pe
 
 To make its use convenient, I recommend creating a keyboard shortcut to invoke EvernotePDFClipper.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
 
+<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
 Usage
 -----
@@ -37,14 +38,12 @@ Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  Everno
 6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
 7. Send a notification (via OS X's notification center) to let you know it's finished.
 
-<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
-
 Beware that the whole process takes time.  The duration depends on the complexity and content of the page (e.g., whether it loads a lot of JavaScript), the speed of Evernote on your computer, the speed of your network connection, and the speed of your computer.  *EvernotePDFClipper does not queue operations, so make sure to let it finish clipping one web page before invoking it to clip another.*  When it's done, your desktop Evernote application should contain a new note with the PDF attached, as shown in the screen shot at right.
 
 Background and more information
 -------------------------------
 
-<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/bad-evernote-clipper-screenshot.png">
+<img align="right" width="35%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/bad-evernote-clipper-screenshot.png">
 
 EvernotePDFClipper was born out of frustrations with Evernote's Web Clipper for Safari.  I dislike the default Evernote clipper's behavior, how it stores information, and how it often produces jumbled output.  (For example of the last, see the screenshot at right.)  I realize I may be in the minority, and other people may be perfectly happy with it.  If you're in the latter category, great! Then you don't need this program.  But if you share my frustrations, this small program may help you.
 
