@@ -1,8 +1,6 @@
 EvernotePDFClipper
 ==================
 
-<img align="right" width="45%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
-
 This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the page currently in Safari's front window.  It does this by calling on the third-party application [Paparazzi!](https://derailer.org/paparazzi/).
 
 ----
@@ -25,6 +23,7 @@ Copy `EvernotePDFClipper.scpt` to a location of your choice on your computer (pe
 
 To make its use convenient, I recommend creating a keyboard shortcut to invoke EvernotePDFClipper.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
 
+<img align="right" width="45%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
 Usage
 -----
