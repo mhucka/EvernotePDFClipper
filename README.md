@@ -23,10 +23,11 @@ Copy `EvernotePDFClipper.scpt` to a location of your choice on your computer (pe
 
 To make its use convenient, I recommend creating a keyboard shortcut to invoke EvernotePDFClipper.  You can use Mac OS X's built-in facilities for this, or a third-party utility such as [Keyboard Maestro](http://www.keyboardmaestro.com/main/).
 
-<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
 Usage
 -----
+
+<img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
 Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  EvernotePDFClipper will then do the following:
 
