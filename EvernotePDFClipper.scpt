@@ -5,20 +5,24 @@
 -- @license Please see the file LICENSE.html in the parent directory
 -- =============================================================================
 
+-- Test if Paparazzi! is installed and complain if it isn't.
+
+try
+	tell application "Finder"
+		get name of application file id "org.derailer.Paparazzi"
+	end tell
+on error
+	display dialog "Could not find application Paparazzi! – quitting."
+	return 1
+end try
+
+-- Good so far.  Proceed.
+
 set _myName to "EvernotePDFClipper"
 set _clipTag to "archived page"
 set _defaultNotebook to ".inbox"
 
--- Test if Paparazzi! is installed and complain if it isn't.
-try
-	tell application "Finder"
-		return name of application file id "org.derailer.Paparazzi"
-	end tell
-on error
-	display dialog "Could not find Paparazzi!"
-end try
-
--- Good so far.  Proceed to get info from Safari.
+-- Get info from Safari.
 
 tell application "Safari" to tell document 1
 	set _pageTitle to name
