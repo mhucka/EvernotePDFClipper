@@ -1,7 +1,7 @@
 EvernotePDFClipper
 ==================
 
-This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the page currently in Safari's front window.  It does this by calling on the third-party application [Paparazzi!](https://derailer.org/paparazzi/).
+This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the Web page currently in Safari's front window.  It does this by calling on the third-party application [Paparazzi!](https://derailer.org/paparazzi/).
 
 ----
 *Author*:      [Michael Hucka](http://www.cds.caltech.edu/~mhucka).
@@ -34,10 +34,10 @@ Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  Everno
 1. Query Safari for the page URL and title
 2. Copy any text that is highlighted on the page in Safari
 3. Query Evernote to get a list of the user's notebooks
-4. Create a pop-up dialog and ask you to select a notebook from a list
+4. Create a pop-up list and ask you to select a notebook
 5. Invoke [Paparazzi!](https://derailer.org/paparazzi/) to render the entire page as a single PDF file
 6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
-7. Send a notification (via OS X's notification center) to let you know it's finished.
+7. Send a notification to let you know it's finished
 
 Beware that the whole process takes time.  The duration depends on the complexity and content of the page (e.g., whether it loads a lot of JavaScript), the speed of Evernote on your computer, the speed of your network connection, and the speed of your computer.  *EvernotePDFClipper does not queue operations, so make sure to let it finish clipping one web page before invoking it to clip another.*  When it's done, your desktop Evernote application should contain a new note with the PDF attached, as shown in the screen shot at right.
 
