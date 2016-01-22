@@ -9,6 +9,17 @@ set _myName to "EvernotePDFClipper"
 set _clipTag to "archived page"
 set _defaultNotebook to ".inbox"
 
+-- Test if Paparazzi! is installed and complain if it isn't.
+try
+	tell application "Finder"
+		return name of application file id "org.derailer.Paparazzi"
+	end tell
+on error
+	display dialog "Could not find Paparazzi!"
+end try
+
+-- Good so far.  Proceed to get info from Safari.
+
 tell application "Safari" to tell document 1
 	set _pageTitle to name
 	set _pageURL to URL
@@ -25,12 +36,17 @@ on error
 	return 1
 end try
 
+-- Get notebook list from Evernote.
+
 set _notebookList to {}
 tell application "Evernote"
 	repeat with _current in every notebook
 		copy (the name of _current) to end of _notebookList
 	end repeat
 end tell
+
+-- Ask user which notebook they want to use and for an optional
+-- title for the note to be created.
 
 tell application "Safari"
 	activate
@@ -118,5 +134,6 @@ tell application "Evernote"
 end tell
 
 display notification "In notebook '" & _destNotebook & "'" with title _myName subtitle "Captured '" & _pageTitle & "'"
+
 
 
