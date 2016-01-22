@@ -137,6 +137,9 @@ tell application "Evernote"
 	tell _note to append attachment _pdfTmp
 end tell
 
+-- Clean up.
+tell application "Finder" to delete _pdfTmp as POSIX file
+
 display notification "In notebook '" & _destNotebook & "'" with title _myName subtitle "Captured '" & _pageTitle & "'"
 
 
