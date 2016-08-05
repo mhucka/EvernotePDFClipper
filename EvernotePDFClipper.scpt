@@ -128,12 +128,10 @@ tell application "Evernote"
 
 	-- Replace the note content completely with the way I want it done.
 
-	set HTML content of item 1 of _note to ""
 	if _selectedText is not equal to missing value and _selectedText is not equal to "" then
-
-		tell _note to append text _selectedText
-
-		tell _note to append html "<br><hr><br>"
+		set HTML content of item 1 of _note to "Excerpt:<br><blockquote><em>" & _selectedText & "</em></blockquote><hr><br>"
+	else
+		set HTML content of item 1 of _note to ""
 	end if
 	tell _note to append attachment _pdfTmp
 end tell
