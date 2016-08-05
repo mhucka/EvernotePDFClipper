@@ -95,6 +95,9 @@ tell application "Safari"
 	end if
 
 	set _noteTitle to the text returned of (display dialog "Title for note (leave empty to use web page title):" default answer "")
+	if _noteTitle is equal to "" then
+		set _noteTitle to _pageTitle
+	end if
 end tell
 
 set _titleForFile to do shell script "echo " & quoted form of _pageTitle & " | sed 's|[^a-zA-Z0-9]||g'"
@@ -112,13 +115,8 @@ end tell
 tell application "Evernote"
 	-- Use Evernote's normal creation command so that it sets the note
 	-- properties such as the URL.
-	--
 
-	if _noteTitle is equal to "" then
-		set _note to create note title _pageTitle from url _pageURL notebook _destNotebook
-	else
-		set _note to create note title _noteTitle from url _pageURL notebook _destNotebook
-	end if
+	set _note to create note title _noteTitle from url _pageURL notebook _destNotebook
 	set source URL of _note to _pageURL
 
 	if tag named _clipTag exists then
@@ -129,10 +127,12 @@ tell application "Evernote"
 	assign _tag to _note
 
 	-- Replace the note content completely with the way I want it done.
-	--
+
 	set HTML content of item 1 of _note to ""
 	if _selectedText is not equal to missing value and _selectedText is not equal to "" then
+
 		tell _note to append text _selectedText
+
 		tell _note to append html "<br><hr><br>"
 	end if
 	tell _note to append attachment _pdfTmp
