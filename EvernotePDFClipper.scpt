@@ -119,6 +119,7 @@ tell application "Evernote"
 	else
 		set _note to create note title _noteTitle from url _pageURL notebook _destNotebook
 	end if
+	set source URL of _note to _pageURL
 
 	if tag named _clipTag exists then
 		set _tag to tag named _clipTag
