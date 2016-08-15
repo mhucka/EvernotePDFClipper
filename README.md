@@ -31,15 +31,16 @@ Invoke EvernotePDFClipper in some way (e.g., using a keyboard shortcut).  Everno
 
 <img align="right" width="40%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/evernotepdfclipper-screenshot.png">
 
-1. Query Safari for the page URL and title
+1. Ask Safari for the URL and title of the page in the front window
 2. Copy any text that is highlighted on the page in Safari
 3. Query Evernote to get a list of the user's notebooks
 4. Create a pop-up list and ask you to select a notebook
 5. Invoke [Paparazzi!](https://derailer.org/paparazzi/) to render the entire page as a single PDF file
-6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and with the PDF file as an attachment
+6. Invoke [webarchiver](https://github.com/newzealandpaul/webarchiver) to save the page in [webarchive](https://en.wikipedia.org/wiki/Webarchive) format
+6. Call on Evernote to create a new note with a title equal to the title of the web page, the content equal to any text highlighted on the page in Safari, and both the PDF file and webarchive file as attachments
 7. Send a notification to let you know it's finished
 
-Beware that the whole process takes time.  The duration depends on the complexity and content of the page (e.g., whether it loads a lot of JavaScript), the speed of Evernote on your computer, the speed of your network connection, and the speed of your computer.  *EvernotePDFClipper does not queue operations, so make sure to let it finish clipping one web page before invoking it to clip another.*  When it's done, your desktop Evernote application should contain a new note with the PDF attached, as shown in the screen shot at right.
+Beware that the whole process takes time.  The duration depends on the complexity and content of the page (e.g., whether it loads a lot of JavaScript), the speed of Evernote on your computer, the speed of your network connection, and the speed of your computer.  When it's done, your desktop Evernote application should contain a new note with the PDF attached, as shown in the screen shot at right.
 
 Background and more information
 -------------------------------
@@ -53,6 +54,8 @@ With the Evernote Web Clipper, I *used to* to be able to save a web page in PDF 
 Both the print-to-PDF and the source clipping approaches simply don't work for the purpose of archival storage of a web page: what is stored is not what you see in your browser.  As a researcher, I want to save the most faithful representation of materials that I read and use.
 
 Thus, this program was born.
+
+This program stores a copy of a page as both a single-page PDF file and (for additional archival benefits in case the page cannot be captured well in PDF form) as an archive in Safari [webarchive](https://en.wikipedia.org/wiki/Webarchive) format.  It attaches both the PDF and the archive to a note in Evernote, in the Evernote notebook of your choosing.  It also saves any highlighted text on the web page as the body/text of the note.
 
 
 Reporting problems
@@ -85,6 +88,8 @@ Acknowledgments
 ---------------
 
 A huge round of thanks to Nate Weaver, the developer of [Paparazzi!](https://derailer.org/paparazzi/), without which this tool would not be possible.  (If you find yourself using EvernotePDFClipper and Paparazzi! frequently, please [give a donation to the author of Paparazzi!](https://derailer.org/paparazzi/donate).)
+
+Another huge round of thanks to user ["Paul"](https://github.com/newzealandpaul), the developer of [webarchiver](https://github.com/newzealandpaul/webarchiver), which made it much easier to save a web page in webarchive format.
 
 
 Copyright and license
