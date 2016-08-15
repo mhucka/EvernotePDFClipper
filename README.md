@@ -1,7 +1,7 @@
 EvernotePDFClipper
 ==================
 
-This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the Web page currently in Safari's front window.  It does this by calling on the third-party application [Paparazzi!](https://derailer.org/paparazzi/).
+This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the Web page currently in Safari's front window; for additional archival benefits, it also saves the page as an archive in [webarchive](https://en.wikipedia.org/wiki/Webarchive) format.  It does this by calling on the third-party applications [Paparazzi!](https://derailer.org/paparazzi/) and [webarchiver](https://github.com/newzealandpaul/webarchiver).
 
 ----
 *Author*:      [Michael Hucka](http://www.cds.caltech.edu/~mhucka).
@@ -13,7 +13,7 @@ This Mac OS X AppleScript program creates a new note in Evernote containing a **
 Requirements
 ------------
 
-EvernotePDFClipper requires [Paparazzi!](https://derailer.org/paparazzi/) to run.  Please visit the [Paparazzi!](https://derailer.org/paparazzi/) to download it and install it on your computer.
+EvernotePDFClipper requires [Paparazzi!](https://derailer.org/paparazzi/) and [webarchiver](https://github.com/newzealandpaul/webarchiver) to run.  Please visit the [Paparazzi!](https://derailer.org/paparazzi/) and [webarchiver](https://github.com/newzealandpaul/webarchiver) sites to download them and install them on your computer.
 
 
 Installation
@@ -45,7 +45,7 @@ Beware that the whole process takes time.  The duration depends on the complexit
 Background and more information
 -------------------------------
 
-EvernotePDFClipper was born out of frustrations with Evernote's Web Clipper for Safari.  I dislike the default Evernote clipper's behavior, how it stores information, and how it often produces jumbled output.  (For example of the last, see the screenshot at right.  It shows a clipped note with scrambled text in my copy of Evernote version 6.3 on a Mac.)  <img align="right" width="35%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/bad-evernote-clipper-screenshot.png">  I realize I may be in the minority, and other people may be perfectly happy with it.  If you're in the latter category, great! Then you don't need this program.  But if you share my frustrations, this small program may help you.
+EvernotePDFClipper was born out of frustrations with Evernote's Web Clipper for Safari.  I strongly dislike the default Evernote clipper's behavior, as well the form in which it stores information and how it often produces jumbled output.  (For example of the last, see the screenshot at right.  It shows a clipped note with scrambled text in my copy of Evernote version 6.3 on a Mac.)  <img align="right" width="35%" src="https://raw.githubusercontent.com/mhucka/EvernotePDFClipper/master/.graphics/bad-evernote-clipper-screenshot.png">  I realize I may be in the minority, and other people may be perfectly happy with it.  If you're in the latter category, great! Then you don't need this program.  But if you share my frustrations, this small program may help you.
 
 I find the versions of the Evernote Web Clipper after version 5.9.15 to be *incredibly* frustrating for a keyboard-intensive user like me: keyboard focus doesn't move to the clipper interface when the clipper is invoked, pressing the tab key does not move focus between fields, the clipper presents a completely useless "OK" confirmation dialog after you click, etc.  It seems to be designed for people who only use the mouse.   After initially upgrading my copy of the Clipper after a new version came out, I quickly downgraded back to 5.9.15 just to keep my sanity.  At least 5.9.15 solved my user interface complaints, but not my problems with how it stored information.
 
