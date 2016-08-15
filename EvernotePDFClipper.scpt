@@ -1,6 +1,6 @@
 -- =============================================================================
 -- @file    EvernotePDFClipper
--- @brief   Create single-page PDF of page currently in Safari's front window.
+-- @brief   Create single-page PDF of page currently in Safari's front window. Also saves webarchive.
 -- @author  Michael Hucka <mhucka@caltech.edu>
 -- @license Please see the file LICENSE.html in the parent directory
 -- =============================================================================
@@ -21,6 +21,10 @@ end try
 set _myName to "EvernotePDFClipper"
 set _clipTag to "archived page"
 set _defaultNotebook to ".inbox"
+tell application "Finder"
+	set _home to home as string
+	set _desktop to _home & "Desktop"
+end tell
 
 -- Get info from Safari.
 
@@ -101,7 +105,10 @@ tell application "Safari"
 end tell
 
 set _titleForFile to do shell script "echo " & quoted form of _pageTitle & " | sed 's|[^a-zA-Z0-9]||g'"
-set _pdfTmp to "/Users/mhucka/Desktop/" & _titleForFile & ".pdf"
+set _pdfTmp to _desktop & ":" & _titleForFile & ".pdf"
+set _archiveTmp to _desktop & ":" & _titleForFile & ".webarchive"
+
+-- Save single-page PDF.
 
 tell application "Paparazzi!"
 	capture _pageURL
@@ -111,6 +118,16 @@ tell application "Paparazzi!"
 	save as PDF in _pdfTmp
 	close window 1
 end tell
+
+-- Save web archive of page.
+
+try
+	do shell script "/opt/local/bin/webarchiver -url '" & _pageURL & "' -output " & POSIX path of _archiveTmp
+on error
+	set _archiveTmp to missing value
+end try
+
+-- Call on Evernote to create the note, then attach the PDf and archive to it.
 
 tell application "Evernote"
 	-- Use Evernote's normal creation command so that it sets the note
@@ -133,13 +150,17 @@ tell application "Evernote"
 	else
 		set HTML content of item 1 of _note to ""
 	end if
+
+	-- Finally, attach the PDF and the archive.
+
 	tell _note to append attachment _pdfTmp
+	if _archiveTmp is not equal to missing value then
+		tell _note to append attachment _archiveTmp
+	end if
 end tell
 
 -- Clean up.
-tell application "Finder" to delete _pdfTmp as POSIX file
+tell application "Finder" to delete _pdfTmp
 
 display notification "In notebook '" & _destNotebook & "'" with title _myName subtitle "Captured '" & _pageTitle & "'"
-
-
 
