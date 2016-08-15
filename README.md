@@ -3,6 +3,8 @@ EvernotePDFClipper
 
 This Mac OS X AppleScript program creates a new note in Evernote containing a **single-page** PDF rendering of the Web page currently in Safari's front window; for additional archival benefits, it also saves the page as an archive in [webarchive](https://en.wikipedia.org/wiki/Webarchive) format.  It does this by calling on the third-party applications [Paparazzi!](https://derailer.org/paparazzi/) and [webarchiver](https://github.com/newzealandpaul/webarchiver).
 
+[![License](http://img.shields.io/:license-LGPL-blue.svg)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html) 
+
 ----
 *Author*:      [Michael Hucka](http://www.cds.caltech.edu/~mhucka).
 
