@@ -161,6 +161,7 @@ end tell
 
 -- Clean up.
 tell application "Finder" to delete _pdfTmp
+tell application "Finder" to delete _archiveTmp
 
 display notification "In notebook '" & _destNotebook & "'" with title _myName subtitle "Captured '" & _pageTitle & "'"
 
