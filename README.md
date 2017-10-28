@@ -86,6 +86,12 @@ The following improvements would be particularly welcome:
 * Make EvernotePDFClipper ask for tags to add to the note.  This will require querying Evernote for the user's tags, creating a dialog to let the user select one or more tags (or write the tags as text), and attaching the tags to the note in Evernote.
 
 
+Do you like it?
+------------------
+
+If you like this software, don't forget to give this repo a star on GitHub to show your support!
+
+
 Acknowledgments
 ---------------
 
